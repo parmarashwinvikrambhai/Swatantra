@@ -1,4 +1,4 @@
-# Swatantra 
+# Swatantra Global
 ### Made By Gajraj Bhadoriya
 
 ## Dependencies
