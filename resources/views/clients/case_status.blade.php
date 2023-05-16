@@ -1,4 +1,6 @@
-@include('client/header')
+@include('clients.header')
+@include('clients.sidebar')
+@include('clients.footer')
 <style>
         .main {
             box-shadow: 0 0 5px rgba(0, 0, 0, .30);
@@ -8,8 +10,8 @@
             left: 10%;
             margin-top: 20px;
             width: 75%;
-            margin-top: -90px;
-            margin-left: 54px;
+            margin-top: 10px;
+            margin-left: 157px;
             background-color: #FFFFFF;
         }
 
@@ -22,7 +24,7 @@
         .name-pic {
             position: relative;
             top: 20px;
-            background: rgb(131,177,235);
+            background: rgb(240, 188, 180);
         }
 
         .name-pic img {
@@ -48,6 +50,27 @@
             display: flex;
         }
 
+        table, th, td {
+          border: 1px solid;
+        }
+
+        strong {
+            background-color: green;
+            color: white;
+        }
+
+        thead {
+          background-color: thistle;
+          height: 75px;
+        }
+
+        tbody{
+          height: 150px;
+        }
+
+        /* tr{
+          height: 135px;
+        } */
         .comment,
         .share {
             margin-left: 30px;
@@ -65,38 +88,30 @@
 
 <body>
     <div class="main">
-    @foreach($postArtical as $val)
-        <div class="image-with-text">
-            <div class="name-pic">
-                <img
-                    src="http://127.0.0.1:8000/images/2.png">
-                <span class="span-tags">{{ $val['client_name'] }}</span></br>
-                <small>{{ date('d-M-Y', strtotime($val['updated_at'])) }}</small>
-            </div>
-        </div>
-
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, qui?</p>
-        <div class="all-contain">
-            <h3>{{ $val['case_details']}}</h3>
-            <p>{{ $val['case_type']}}</p>
-            <p>{{ $val['case_title']}}</p>
-        </div>
-        <td><a href="{{ route('registrations')}}">
-            <button class="btn btn-primary">Apply Now</button></a>
-        </td>
-        <!-- <div class="social">
-            <div class="like">
-            <i class="fa fa-thumbs-up"><p>like</p></i>
-            </div>
-            <div class="comment">
-            <i class="fa fa-comment"><p>Comment</p></i>
-            </div>
-            <div class="share">
-            <i class="fa fa-share"><p>Share</p></i>
-            </div>
-        </div> -->
-  @endforeach
+    <table>
+    <thead>
+        <tr>
+            <th>Lawyer Name</th>
+            <th>Case name</th>
+            <th>Description</th>
+            <th>status</th>
+            <th>Next Hearing Date</th>
+            <th>updated at</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach($views as $val)
+        <tr>
+            <td>{{$val['lawyer_name']}}</td>
+            <td>{{ $val['case_name'] }}</td>
+            <td>{{ $val['description'] }}</td>
+            <td>{{ $val['status'] }}</td>
+            <td>{{ date('d-M-Y', strtotime($val['next_hearing'])) }}</td>
+            <td>{{ date('d-M-Y', strtotime($val['updated_at'])) }}</td>
+        </tr>
+        @endforeach 
+    </tbody>
+</table>
     </div>
   </body>
 </html>
-@include('client/footer')

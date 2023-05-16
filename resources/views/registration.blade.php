@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-<title>Visitors an Admin Panel Category Bootstrap Responsive Website Template | Registration :: w3layouts</title>
+<title>Swatantra Global Garner</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -27,21 +27,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<form action="{{ Route('registration') }}" method="POST">
 		@csrf
             @method('POST')
-			<input type="email" class="ggg" name="email" placeholder="E-MAIL" required="">
-			<input type="text" class="ggg" name="firstname" placeholder="NAME" required="">
-			<input type="password" class="ggg" name="password" placeholder="PASSWORD" required="">
-			<h4><input type="checkbox" />I agree to the Terms of Service and Privacy Policy</h4>
+			<div class="ggg">
+                            <select class="form-control input-lg m-bot15" name="category">
+                                <option value="client">As a Client</option>
+                                <option value="lawyer">As a lawyer</option>
+                   			</select>
+                        </div>
+						@if ($errors->has('category'))
+                        <p class="text-danger">{{ $errors->first('category') }}</p>
+                    	@endif
+						
+						<input type="email" class="ggg" name="email" placeholder="E-MAIL" autocomplete="off" required="">
+						@if ($errors->has('email'))
+                            <p class="text-danger">{{ $errors->first('email') }}</p>
+                        @endif
+						
+						<input type="text" class="ggg" name="firstname" placeholder="FULL NAME" required="">
+						@if ($errors->has('firstname'))
+                            <p class="text-danger">{{ $errors->first('firstname') }}</p>
+                        @endif
+						
+						<input type="password" class="ggg" name="password" placeholder="PASSWORD" required="">
+						@if ($errors->has('password'))
+                            <p class="text-danger">{{ $errors->first('password') }}</p>
+                        @endif
 			
-				<div class="clearfix"></div>
-				<input type="submit" value="submit" name="register">
+						<h4><input type="checkbox" required="" />I agree to the Terms of Service and Privacy Policy</h4>
+						<div class="clearfix"></div>
+						<input type="submit" value="submit" name="register">
 		</form>
-		<p>Already Registered.<a href="login.html">Login</a></p>
+		<p>Already Registered.<a href="login">Sign in</a></p>
 </div>
 </div>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="js/scripts.js"></script>
-<script src="js/jquery.slimscroll.js"></script>
+<script src="js/bootstrap.js"></script> 
+<script src="js/jquery.dcjqaccordion.2.7.js"></script> 
+ <script src="js/scripts.js"></script>
+<script src="js/jquery.slimscroll.js"></script> 
 <script src="js/jquery.nicescroll.js"></script>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
 <script src="js/jquery.scrollTo.js"></script>

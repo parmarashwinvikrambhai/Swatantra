@@ -14,22 +14,23 @@
 						<ul class="slides">
 							<li>	
 								<div class="banner-text">
+									<h2>“Swatantra!”</h2>
+									<p>Swatantra is a part of our Corporate Social Responsibility and a platform to serve the needy. It provides Free Legal Aid to the people in need of justice and to those who can't afford high legal expenses</p>
+									<a class="hvr-shutter-in-horizontal" href="https://swatantra.globalgarner.com/about-us">Read More</a>
+								</div>
+							</li>
+							<li>	
+								<div class="banner-text">
 									<h2>“GLOBAL GARNER IS WORLD’S 1st  AND ONLY POST PAID SALES SERVICE PROVIDER!”</h2>
 									<p>GG is world’s 1st and only post paid sales company with Zero Rental, which helps the vendor to sell their products and services with our advanced digital and on ground sales support also providing best offer to their customers of 100% cashback with no upper limit.Which makes us the first choice for any vendor as we first perform and then seek for our commission only, Nothing in advance.</p>
-									<a class="hvr-shutter-in-horizontal" href="#">Read More</a>
+									<a class="hvr-shutter-in-horizontal" href="https://swatantra.globalgarner.com/about-us">Read More</a>
 								</div>
 							</li>
 							<li>	
 								<div class="banner-text">
 									<h2>“MOST SECURED WAY TO SOCIALISE AND EARN !”</h2>
 									<p>Global garner is also world’s 1st and only social media platform on which all users are verified through Mobile, PAN & Adhaar which makes it the safest place to socialize and above all now when you Socialise On GG- RELATIONS You Earn Too</p>
-									<a class="hvr-shutter-in-horizontal" href="#">Read More</a>
-								</div>
-							<li>	
-								<div class="banner-text">
-									<h2>“AN EXPERT LEGAL WE OFFER OUR CLIENTS  ADVICE!”</h2>
-									<p>Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English</p>
-									<a class="hvr-shutter-in-horizontal" href="#">Read More</a>
+									<a class="hvr-shutter-in-horizontal" href="https://swatantra.globalgarner.com/about-us">Read More</a>
 								</div>
 							</li>
 						</ul>

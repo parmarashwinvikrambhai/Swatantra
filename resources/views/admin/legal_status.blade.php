@@ -17,25 +17,15 @@
 		<div class="table-agile-info">
   <div class="panel panel-default">
     <div class="panel-heading">
-      All Users
+      All Clients Case Status
     </div>
     <div class="row w3-res-tb">
       <div class="col-sm-5 m-b-xs">
         <select class="input-sm form-control w-sm inline v-middle">
-          <option value="0">All Users</option>
-          <option value="0">Latest Users</option>
-          <option value="1">Clients Only</option>
-          <option value="2">Lawyers Only</option>
-          <option value="3">Who Register In Last 10 Days</option>
-          <option value="4">Who Register In Last 3 Months</option>
-          <option value="5">Who Register In Last 6 Months</option>
-          <option value="6">Who Register In Last 10 Days/clients</option>
-          <option value="7">Who Register In Last 3 Months/clients</option>
-          <option value="8">Who Register In Last 6 Months/clients</option>
-          <option value="9">Who Register In Last 10 Days/Lawyers</option>
-          <option value="10">Who Register In Last 3 Months/Lawyers</option>
-          <option value="10">Who Register In Last 6 Months/Lawyers</option>
-
+          <option value="0">Clients Case Status</option>
+          <option value="1">Delete selected</option>
+          <option value="2">Bulk edit</option>
+          <option value="3">Export</option>
         </select>
         <button class="btn btn-sm btn-default">Apply</button>                
       </div>
@@ -53,39 +43,37 @@
     <div class="table-responsive">
       
       <table class="table table-striped b-t b-light">
+        <div class="alert alert-success">
+        </div>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Category</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Action</th>
+            <th>Lawyer Name</th>
+            <th>Case Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Client Id</th>
+            <th>Next Hearing</th>
             <th style="width:30px;"></th> 
           </tr>
         </thead>
         <tbody>
-        <?php 
-        //$count = ''; ?>
-
-        <!-- @php $count = 0; @endphp -->
-                            @foreach ($views as $val)
-                                <!-- {{ $count++ }} -->
+            @foreach ($legalStatus as $Status)
           <tr>
-          <!-- <td>{{ $count }}</td> -->
-
-              <td>{{ $val['id'] }}</td>
-              <td>{{ $val['category'] }}</td>
-              <td>{{ $val['firstname'] }}</td>
-              <td>{{ $val['email'] }}</td>
-              <td><span class="input-group-btn">
-                <form action="{{ route('destroy', $val['id']) }}" method="post">
-                  @csrf
-                  @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Remove</button>
-                </form>
-              {{--<a href="{{ route('destroy', ['id' => $val['id']]) }}">
-              </a>
-            <button class="btn btn-primary" type="button">View</button>--}}
+            <td>{{ $Status['lawyer_name'] }}</td>
+              <td>{{ $Status['case_name'] }}</td>
+              <td>{{ $Status['description'] }}</td>
+              <td>{{ $Status['status'] }}</td>
+              <td>{{ $Status['client_id'] }}</td>
+              <td>{{ $Status['next_hearing'] }}</td>
+            <td><span class="input-group-btn">
+            <form action="{{ route('remove_status')}}" method="POST">
+            @csrf
+            @method('delete')
+            <input type="hidden" name="id" id="id" value="{{$Status['client_id']}}">
+            <td>
+                <button type="submit" class="btn btn-danger">Remove</button>
+            </td>
+        </form>
           </span></td>
           </tr>
           @endforeach

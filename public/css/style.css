@@ -13,7 +13,8 @@ html, body{
 	font-family: 'Roboto', sans-serif;
     font-size: 100%;
     overflow-x: hidden;
-    background: url(../images/bg.jpg) no-repeat 0px 0px;
+    /* background: url(../images/bg.jpg) no-repeat 0px 0px; */
+    /* background: url("	https://cdn.pixabay.com/photo/2017/07/10/23/49/club-2492011__340.jpg") no-repeat 0px 0px; */
 	background-size:cover;
 }
 body a{
@@ -202,7 +203,7 @@ ul.sidebar-menu li a.active i {
     transition:all .3s ease-in-out;
 }
 .footer {
-    background: #d19a98;
+    background: #236aee;
     padding: 20px;
 }
 .footer p {
@@ -219,7 +220,8 @@ ul.sidebar-menu li a.active i {
     left:0;
     right:0;
     z-index:1002;
-    background:rgb(240, 188, 180);
+    /* background:rgb(240, 188, 180); */
+    background: #236aee;
     -webkit-transition:all .3s ease-in-out;
     -moz-transition:all .3s ease-in-out;
     -o-transition:all .3s ease-in-out;
@@ -239,18 +241,24 @@ ul.sidebar-menu li a.active i {
     width:100%;
 }
 .brand {
-    background:#8b5c7e;
+    /* background:#8b5c7e; */
+    background: #236aee;
     float:left;
     width:240px;
     height:80px;
     position:relative;
 }
 a.logo {
-    font-size:32px;
+    /* font-size:32px;
     color:#fff;
     float:left;
     margin:20px 0 0 25px;
-    text-transform:uppercase;
+    text-transform:uppercase; */
+    font-size: 16px;
+    color: #fff;
+    float: left;
+    margin: 20px 0 0 23px;
+    text-transform: uppercase;
 }
 a.logo:hover,a.logo:focus {
     text-decoration:none;
@@ -507,7 +515,8 @@ ul.top-menu>li>a:hover,ul.top-menu>li>a:focus {
     background: none;
     margin-right: 0;
     border: 1px solid #8b5c7e;
-    background: #8b5c7e;
+    /* background: #8b5c7e; */
+    background: rgb(131,177,235);
 }
 .top-nav ul.top-menu>li.language>a {
     margin-top:-2px;
@@ -574,7 +583,8 @@ ul.top-menu>li>a:hover,ul.top-menu>li>a:focus {
     transition: all .3s ease;
     border: 1px solid #8b5c7e;
     box-shadow: none;
-    background: #8b5c7e url(../images/search-icon.png) no-repeat 10px 8px;
+    /* background: #8b5c7e url(../images/search-icon.png) no-repeat 10px 8px; */
+    background: rgb(131,177,235) url(../images/search-icon.png) no-repeat 10px 8px;
     padding: 0 5px 0 30px;
     color: #fff;
     border-radius: 100px;
@@ -601,7 +611,8 @@ ul.top-menu>li>a:hover,ul.top-menu>li>a:focus {
     float:left;
     margin-top:23px;
     margin-left:-15px;
-    background:#8b5c7e;
+    /* background:#8b5c7e; */
+    background: rgb(131,177,235);
     border-radius:50%;
     -webkit-border-radius:50%;
     width:32px;
@@ -2547,6 +2558,7 @@ div#graph10,div#graph11 {
 @media (max-width: 1366px){
 .w3layouts-main {
     width: 35%;
+    background: rgb(131,177,235);
 }
 .captn {
     width: 280px;

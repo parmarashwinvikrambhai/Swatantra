@@ -1,16 +1,17 @@
-@include('client/header')
+@include('lawyers.header')
+@include('lawyers.sidebar')
 <style>
         .main {
             box-shadow: 0 0 5px rgba(0, 0, 0, .30);
-            ;
             padding: 20px;
             position: relative;
             left: 10%;
             margin-top: 20px;
             width: 75%;
-            margin-top: -90px;
-            margin-left: 54px;
+            margin-top: 15px;
+            margin-left: 157px;
             background-color: #FFFFFF;
+            margin-bottom: 36px;
         }
 
         .image-with-text {
@@ -31,9 +32,10 @@
         }
 
         .span-tags {
-            color: #365899;
-            font-size: 25px;
+            color: #ffffff;
+            font-size: 21px;
             position: absolute;
+            margin-top: 2px;
         }
 
         .all-contain {
@@ -41,7 +43,7 @@
             border-bottom: 1px solid black;
             border-left: 1px solid black;
             border-right: 1px solid black;
-            height: 400px;
+            height: 224px;
         }
 
         .social {
@@ -52,7 +54,11 @@
         .share {
             margin-left: 30px;
         }
-    </style>
+
+         td button{
+            margin-left: 880px;
+        }
+</style>
 </br></br></br></br>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,8 +70,27 @@
 </head>
 
 <body>
+@if(session('error'))
+        <script>
+            alert("{{ session('error') }}");
+        </script>
+    @elseif(session('success'))
+        <script>
+            alert("{{ session('success') }}");
+        </script>
+    @elseif(session('errorr'))
+        <script>
+            alert("{{ session('errorr') }}");
+        </script>
+@endif
+
+@php
+    $lawyer_id = session::get('id');
+@endphp 
+
+@foreach($postArtical as $val)
+
     <div class="main">
-    @foreach($postArtical as $val)
         <div class="image-with-text">
             <div class="name-pic">
                 <img
@@ -81,22 +106,40 @@
             <p>{{ $val['case_type']}}</p>
             <p>{{ $val['case_title']}}</p>
         </div>
-        <td><a href="{{ route('registrations')}}">
+        <form action="{{route('lawyerStatus', ['case_id' => $val['case_id']])}}" method="POST">
+            @csrf
+            @method('POST')
+            <input type="hidden" name="client_id" id="id" value="{{$val['client_id']}}">
+            <td>
             <button class="btn btn-primary">Apply Now</button></a>
-        </td>
-        <!-- <div class="social">
+            </td>
+        </form>
+        <div class="social">
             <div class="like">
-            <i class="fa fa-thumbs-up"><p>like</p></i>
+                <form action="{{ route('likePost', ['post_id' => $val['id']]) }}" method="post">
+                    @csrf
+                    <input type="hidden" name="lawyer_id" id="id" value="{{$lawyer_id}}">
+                    <button type="submit" class="px-4 py-2 text-white bg-gray-600">
+                        <i class="fa fa-thumbs-up"></i>
+                    </button>
+                </form>
             </div>
             <div class="comment">
-            <i class="fa fa-comment"><p>Comment</p></i>
+            <form action="" method="post">
+                @csrf
+                <button class=" px-4 py-2 text-white bg-gray-600"><i class="fa fa-comment"></i>
+                </button>
+            </form>
             </div>
             <div class="share">
-            <i class="fa fa-share"><p>Share</p></i>
+            <form action="" method="post">
+                @csrf
+                <button class=" px-4 py-2 text-white bg-gray-600"><i class="fa fa-share"></i>
+                </button>
+            </form>
             </div>
-        </div> -->
-  @endforeach
+        </div>
     </div>
+  @endforeach
   </body>
 </html>
-@include('client/footer')

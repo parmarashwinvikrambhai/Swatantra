@@ -1114,6 +1114,8 @@ figure {
 }
 img {
   vertical-align: middle;
+  height: 62px;
+    width: 180px;
 }
 .img-responsive,
 .thumbnail > img,
@@ -1121,8 +1123,8 @@ img {
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: block;
-  max-width: 100%;
-  height: auto;
+  width: 103%;
+    height: 250px;
 }
 .img-rounded {
   border-radius: 6px;
@@ -4493,7 +4495,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
+  background: #236aee;
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {

@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cases;
+use App\Models\Lawyer;
 use Illuminate\Http\Request;
 use App\Models\Users;
-use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
     public function index()
     {
-        $id = session()->get('id');
-        $views = Users::select('id', 'email', 'firstname')->where('id', '!=', $id)->get()->toArray();
+        // $id = session()->get('id');
+        // $views = Users::select('id', 'email', 'firstname')->where('id', '!=', $id)->get()->toArray();
+        $views = Users::orderBy('updated_at', 'desc')->get();
         return view('admin.manage-users')->with('views', $views);
     }
 
@@ -29,4 +32,9 @@ class UserController extends Controller
         }
         return redirect()->route('viewuser')->with('success', 'user delete sucessfully');
     }
+
+    // public function document()
+    // {
+    //     return view('admin.document');
+    // }
 }

@@ -5,15 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Lawyer extends Model
+class DonationReq extends Model
 {
     use HasFactory;
-    public $table = "lawyer";
+    public $table = "donation_request";
     protected $fillable = [
-        'name',
-        'email',
-        'phone',
-        'address',
-        'description',
+        'case_id',
+        'amount'
     ];
 }

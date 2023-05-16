@@ -19,7 +19,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="header-top">
 		<div class="container">
 			<div class="head-main">
-				<h1><a href="/">Swatantra</a></h1>
+				<img src="https://s3.ap-south-1.amazonaws.com/gg-statics/gg-statics-staging/logo.png"/>
+				<!-- <h1><a href="/">Swatantra</a></h1> -->
 			</div>
 			
 			<!-- <div class="hea-rgt">
@@ -42,9 +43,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="{{ route('practice') }}">Practice</a></li>
 						<li><a href="{{ route('client') }}">Clients</a></li>
 						<li><a href="{{ route('resources') }}">Resources</a></li>
-						<li><a href="{{ route('registration') }}">Registration</a></li>
-						<li><a href="{{ route('contact') }}">Contact</a></li>
 						<li><a href="{{ route('case') }}">Cases</a></li>
+						<li><a href="{{route('donation')}}">Donation</a></li>
+						<li><a href="{{route('login')}}">Sign in</a></li>
+						<li><a href="{{ route('registrationss') }}">Sign up</a></li>
+						<li><a href="{{ route('contact') }}">Contact</a></li>
+
 					</ul>
 				</div>
 				<!--/.navbar-collapse-->

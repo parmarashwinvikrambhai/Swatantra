@@ -22,9 +22,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <section id="container">
 <header class="header fixed-top clearfix">
 <div class="brand">
-    <a href="index.html" class="logo">
+<!-- <img class="" src="https://swatantra.globalgarner.com/static/media/Swatantra_logo.508b1ad5.svg" />     -->
+<a href="#" class="logo">
     <img src="https://s3.ap-south-1.amazonaws.com/gg-statics/gg-statics-staging/logo.png">
-        Admin
+        Client
     </a>
     <div class="sidebar-toggle-box">
         <div class="fa fa-bars"></div>
@@ -37,13 +38,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <li>
             <input type="text" class="form-control search" placeholder=" Search">
         </li>
-        <!-- <li><a href=""><i class="fa fa-key"></i>client side</a></li>
-        <li><a href=""><i class="fa fa-key"></i>Lawyer</a></li>
-        <li><a href=""><i class="fa fa-key"></i>clients penal</a></li> -->
         <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="images/2.png">
-                <span class="username">GG</span>
+            <a data-toggle="dropdown" class="dropdown-toggle" href="{{ route('ViewDonation') }}">
+                <img alt="" src="	https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg9hUdZBKHO-RAHYZkx5PQaHlex0MNZuB53Q&usqp=CAU">
+                <span class="username">Donations</span>   
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
@@ -51,6 +49,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
                 <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
             </ul>
+        </li>
+         <!-- <li><a href=""><i class="fa fa-key"></i>client side</a></li> -->
+        <!-- <li><a href=""><i class="fa fa-hand-holding-usd"></i>Donations</a></li>  -->
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <img alt="" src="images/2.png">
+                <span class="username">{{ Session::get('firstname') }}</span>
+                <b class="caret"></b>
+            </a>
         </li>
     </ul>
 </div>

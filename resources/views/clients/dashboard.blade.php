@@ -1,16 +1,18 @@
-@include('client/header')
+@include('clients.header')
+@include('clients.sidebar')
+@include('clients.footer')
 <style>
         .main {
             box-shadow: 0 0 5px rgba(0, 0, 0, .30);
-            ;
             padding: 20px;
             position: relative;
             left: 10%;
             margin-top: 20px;
             width: 75%;
-            margin-top: -90px;
-            margin-left: 54px;
+            margin-top: -41px;
+            margin-left: 157px;
             background-color: #FFFFFF;
+            margin-bottom: 74px;
         }
 
         .image-with-text {
@@ -26,12 +28,12 @@
         }
 
         .name-pic img {
-            width: 40px;
+            width: 50px;
             height: 40px;
         }
 
         .span-tags {
-            color: #365899;
+            color: #ffffff;
             font-size: 25px;
             position: absolute;
         }
@@ -41,7 +43,7 @@
             border-bottom: 1px solid black;
             border-left: 1px solid black;
             border-right: 1px solid black;
-            height: 400px;
+            height: 244px;
         }
 
         .social {
@@ -64,8 +66,8 @@
 </head>
 
 <body>
+@foreach($postArtical as $val)
     <div class="main">
-    @foreach($postArtical as $val)
         <div class="image-with-text">
             <div class="name-pic">
                 <img
@@ -75,15 +77,12 @@
             </div>
         </div>
 
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque, qui?</p>
+        <p>Swatantra is a part of our Corporate Social Responsibility and a platform to serve the needy</p>
         <div class="all-contain">
             <h3>{{ $val['case_details']}}</h3>
             <p>{{ $val['case_type']}}</p>
             <p>{{ $val['case_title']}}</p>
         </div>
-        <td><a href="{{ route('registrations')}}">
-            <button class="btn btn-primary">Apply Now</button></a>
-        </td>
         <!-- <div class="social">
             <div class="like">
             <i class="fa fa-thumbs-up"><p>like</p></i>
@@ -95,8 +94,10 @@
             <i class="fa fa-share"><p>Share</p></i>
             </div>
         </div> -->
-  @endforeach
     </div>
+  @endforeach
   </body>
 </html>
-@include('client/footer')
+
+
+
