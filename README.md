@@ -1,5 +1,5 @@
 # Swatantra 
-### Made By Gajraj Bhadoriya
+### Made By Ashwin Parmar
 
 ## Dependencies
 - Composer version 2.5.0 to 2.5.5
